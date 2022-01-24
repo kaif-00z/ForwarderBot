@@ -1,0 +1,45 @@
+{
+    "name": "ForwarderBot",
+    "description": "A Normal Telegram Bot Which Can Forward meadia/file/message via Bot + User Bot + More Features",
+    "keywords": ["Telegram","python", "bot","userbot","telethon"],
+    "repository": "https://github.com/Kaif-00z/ForwarderBot",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "You api id, from my.telegram.org or @apiScrapperRoBot.",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "You api hash, from my.telegram.org or @apiScrapperRoBot.",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Make a bot from @BotFather, and enter it's api token here.",
+            "value": ""
+        },
+        "SESSION": {
+            "description": "Generate telethon season using @SessionGeneratorBot",
+             "value": ""
+        },
+        "LOG_CHANNEL": {
+            "description": "Create a private group/channel. Add @missrose_bot and your bot + make admin. Do /id. Paste that here",
+             "value": ""
+        },
+        "STORAGE_CHANNEL": {
+            "description": "Create a private group/channel. Add @missrose_bot and your bot + make admin. Do /id. Paste that here",
+             "value": ""
+        },
+        "REDIS_URI": {
+            "description": "",
+             "value": "Redis endpoint URL, from redislabs.com"
+        },
+        "REDIS_PASSWORD": {
+            "description": "Redis endpoint password, from redislabs.com",
+             "value": ""
+        },
+        "OWNER_ID": {
+            "description": "Get ur Id Of Telegram nd Paste Here.",
+            "value": ""
+        }
+    }
+}
