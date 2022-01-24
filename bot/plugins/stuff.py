@@ -40,7 +40,7 @@ HELP_MENU = (
     + "• `/ping` - **Will show the connection speed**\n"
     + "• `/request <text>` - **Will send the request into REQUEST_CHANNEL(default log_channel)**\n"
     + "• `/help` - **Will tell user to use /search <query>**\n"
-    + "• `/search <query>` - **Will send all files/message/media related to the query to bot user**\n"
+    + "• `/search <query>` - **Will send all files/message/media related to the query to bot user from storage channel**\n"
     + "__Help menu for UserBot__\n\n"
     + "• `.ping` - **Will show the connection speed**\n"
     + "• `.dl <filename>` - **as said above**\n"
