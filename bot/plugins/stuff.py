@@ -28,19 +28,20 @@ HELP_MENU = (
     + "• `/fwd` - **Reply to any file/media/message to Forward the message to Dump channel**\n"
     + "• `/setredis <key> <value>` - **Will SET with given key and value in the database**\n"
     + "• `/getredis <key>` - **Will GET value of given key from the database**\n"
-    + "• `/delredis <key> - **Will DELETE the given key from the database**\n"
+    + "• `/delredis <key>` - **Will DELETE the given key from the database**\n"
     + "• `/allkeys` - **Will give list of all KEYS in your Database**\n"
     + "• `/setthumb <telegraph link>` - **Will set Thumbnail**\n"
+    + "• `/telegraph <reply to media>` - **Will upload it in telegra.ph**\n"
     + "• `/webdump <link> <filename> <caption>` - **It will download the file from link and dump it in DUMP_CHANNEL, filename required**\n"
     + "• `/linkdl <link>` - **Will Download from direct link**\n"
     + "• `/listauth` - **Will list all the Authorized User**\n"
-    + "• `/listbanuser` - **Will list all the Banned User**\n"
+    + "• `/listbanuser` - **Will list all the Banned User**\n\n"
     + "__Help menu for user__\n\n"
     + "• `/start` - **will start the bot**\n"
     + "• `/ping` - **Will show the connection speed**\n"
     + "• `/request <text>` - **Will send the request into REQUEST_CHANNEL(default log_channel)**\n"
     + "• `/help` - **Will tell user to use /search <query>**\n"
-    + "• `/search <query>` - **Will send all files/message/media related to the query to bot user from storage channel**\n"
+    + "• `/search <query>` - **Will send all files/message/media related to the query to bot user from storage channel**\n\n"
     + "__Help menu for UserBot__\n\n"
     + "• `.ping` - **Will show the connection speed**\n"
     + "• `.dl <filename>` - **as said above**\n"
@@ -48,18 +49,19 @@ HELP_MENU = (
     + "• `.dump <filename> <caption>` - **as said above**\n"
     + "• `.webdump <link> <filename> <caption>` - **as said above**\n"
     + "• `.linkdl <link>` - **As said above**\n"
+    + "• `.telegraph <reply to media>` - **As said above**\n"
     + "• `.fwd` - **as said above**\n"
     + "• `.allkeys` - **as said above**\n"
     + "• `.setredis <key> <value>` - **as said above**\n"
     + "• `.getredis <key>` - **as said above**\n"
     + "• `.delredis <key>`- **as said above**\n"
     + "• `.eval <script>` - **Evaluate script (python3)**\n"
-    + "• `.bash <cmd>` - **bash = bash, simple 😁**\n"
+    + "• `.bash <cmd>` - **bash = bash, simple 😁**\n\n"
     + "__Owner Restricted Command__\n\n"
     + "• `/auth <id/reply>` - **Will Authorised that user**\n"
     + "• `/remauth <id/reply>` - **Will Unauthorised that user**\n"
-    + "• `/ban <id/reply> - **Will ban the user**\n"
-    + "• `/unban <id/reply> - *Will unban the user**\n"
+    + "• `/ban <id/reply>` - **Will ban the user**\n"
+    + "• `/unban <id/reply>` - **Will unban the user**\n"
 )
 
 MORE_HELP = (
@@ -111,9 +113,6 @@ async def strt(event):
         f"Hi `{event.sender.first_name}` \nFirst send /help",
         buttons=[
             [
-                Button.url(
-                    "SOURCE CODE", url="https://github.com/kaif-00z/ForwarderBot"
-                ),
                 Button.url("DEVELOPER", url="t.me/kaif_00z"),
             ],
         ],
@@ -134,14 +133,10 @@ async def hlp(event):
 
 @user.on(events.NewMessage(outgoing=True, pattern="\\.help"))
 async def _(event):
-    await event.reply(HELP_MENU, buttons=[[Button.inline("MORE", data="nn")]])
+    await event.reply(HELP_MENU)
+    await event.reply(f"__More Help__\n\n{MORE_HELP}")
 
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile("mm")))
-async def _(e):
-    await e.edit(MORE_HELP)
-
-
-@user.on(events.callbackquery.CallbackQuery(data=re.compile("nn")))
 async def _(e):
     await e.edit(MORE_HELP)

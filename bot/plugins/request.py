@@ -27,7 +27,7 @@ async def req(e):
         )
     if not (get_req()):
         return await e.reply("Request Function is Disabled")
-    req = e.text
+    req = e.text.split(" ", maxsplit=1)[1]
     name = await name_get(e.sender_id, e.sender)
     msg_link = e.message.message_link
     button = [
@@ -38,7 +38,7 @@ async def req(e):
     ]
     x = await bot.send_message(
         int(get_req_channel()),
-        f"<b>Request By {name}</b>\n<b>Request</b>: {req}",
+        f"<b>Request By {name}</b>\n<b>Request</b>: `{req}`",
         buttons=button,
         parse_mode="HTML",
     )

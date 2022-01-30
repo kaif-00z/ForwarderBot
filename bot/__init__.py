@@ -53,6 +53,6 @@ except Exception as e:
 
 async def startup():
     mg = f"Bot is Botted Successfully"
-    msg = f"🤖 Successfully Deployed Your Bot 🤖\n**Bot** : @{bot.me.username}\nFor More Help- `.help`"
+    msg = f"🤖 Successfully Deployed Your Bot 🤖\nFor More Help- `.help`"
     await bot.send_message(Var.LOG_CHANNEL, msg)
     await bot.send_message(Var.LOG_CHANNEL, mg)
