@@ -1,6 +1,6 @@
 from bot import dB
 
-get_link():
+def get_link():
     return dB.get("LINK") or " "
 
 def is_link():
