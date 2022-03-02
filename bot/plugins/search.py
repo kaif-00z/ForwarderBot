@@ -15,8 +15,8 @@
 
 
 from . import *
+from .dba.link_db import get_link, is_link
 from .dbs.ban_db import is_ban
-from .dba.link_db import is_link, get_link
 
 Z = []
 X = []
@@ -67,6 +67,6 @@ async def _(event):
 async def _(event):
     if not is_link():
         return
-    query = event.text.split(" ", maxsplit=1)[1].replace(" ","+")
+    query = event.text.split(" ", maxsplit=1)[1].replace(" ", "+")
     base = get_link()
     await event.reply(f"Get it [link]({base}search?q={query})")
