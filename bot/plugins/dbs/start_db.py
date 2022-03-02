@@ -16,11 +16,13 @@ def set_help_message(msg):
 def del_help_message():
     dB.delete("HELP_MSG")
 
+
 def is_start_msg():
     _ = dB.set("START_MSG") or " "
     if _.strip():
         return True
     return False
+
 
 def is_help_msg():
     _ = dB.set("HELP_MSG") or " "
