@@ -19,7 +19,7 @@ from .dbs.ban_db import is_ban
 from .dbs.req_db import get_req, get_req_channel
 
 
-@bot.on(events.NewMessage(pattern="\\/request"))
+@bot.on(events.NewMessage(pattern="\\/request", func=lambda e: not e.is_private))
 async def req(e):
     if is_ban(e.sender_id):
         return await event.reply(
