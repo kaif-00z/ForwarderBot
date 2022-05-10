@@ -60,5 +60,3 @@ async def search(event):
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile("cnc")))
 async def _(event):
     Z.append(event.sender_id)
-
-
