@@ -101,7 +101,9 @@ async def strt(event):
         f"Hi `{event.sender.first_name}` \n**Hi I am file forwarder bot or a searcher bot ! , for more send** /help",
         buttons=[
             [
-                Button.url("Repository", url="https://github.com/kaif-00z/ForwarderBot"),
+                Button.url(
+                    "Repository", url="https://github.com/kaif-00z/ForwarderBot"
+                ),
                 Button.url("DEVELOPER", url="t.me/kaif_00z"),
             ],
         ],
@@ -123,4 +125,3 @@ async def hlp(event):
 @user.on(events.NewMessage(outgoing=True, pattern="\\.help"))
 async def _(event):
     await event.edit(HELP_MENU)
-
