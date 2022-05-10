@@ -15,7 +15,6 @@
 
 
 from . import *
-from .dba.link_db import get_link, is_link
 from .dbs.ban_db import is_ban
 
 Z = []
@@ -63,10 +62,3 @@ async def _(event):
     Z.append(event.sender_id)
 
 
-@bot.on(events.NewMessage(incoming=True, pattern="\\/link"))
-async def _(event):
-    if not is_link():
-        return
-    query = event.text.split(" ", maxsplit=1)[1].replace(" ", "+")
-    base = get_link()
-    await event.reply(f"Get it [link]({base}search?q={query})")
