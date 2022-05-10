@@ -59,6 +59,5 @@ async def _(e):
     await sent.edit(f"Broadcast Completed To {done} users\n[Error in {er} users]")
     await bot.send_message(
         Var.LOG_CHANNEL,
-        "{} Broadcast a message".format(await name_get(e.sender_id, e.sender)),
-        parse_mode="HTML",
+        "{} **Broadcast a message**".format(await name_get(e.sender_id, e.sender)),
     )
