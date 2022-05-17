@@ -19,23 +19,23 @@
         },
         "SESSION": {
             "description": "Generate telethon season using @SessionGeneratorBot",
-             "value": ""
+            "value": ""
         },
         "LOG_CHANNEL": {
             "description": "Create a private group/channel. Add @missrose_bot and your bot + make admin. Do /id. Paste that here",
-             "value": ""
+            "value": ""
         },
         "STORAGE_CHANNEL": {
             "description": "Create a private group/channel. Add @missrose_bot and your bot + make admin. Do /id. Paste that here",
-             "value": ""
+            "value": ""
         },
         "REDIS_URI": {
-            "description": "",
-             "value": "Redis endpoint URL, from redislabs.com"
+            "description": "Redis endpoint URL, from redislabs.com",
+            "value": ""
         },
         "REDIS_PASSWORD": {
             "description": "Redis endpoint password, from redislabs.com",
-             "value": ""
+            "value": ""
         },
         "OWNER_ID": {
             "description": "Get ur Id Of Telegram nd Paste Here.",
